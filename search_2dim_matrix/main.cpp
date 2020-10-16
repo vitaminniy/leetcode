@@ -4,17 +4,17 @@
 #include "solution.cpp"
 
 void solution(std::vector<std::vector<int>> &matrix, int target) {
-  int m = matrix.size();
-  int n = 0;
-  if (m > 0 && matrix[0].size() > 0) {
-    n = matrix[0].size();
+  std::cout << "Searching for " << target << " in matrix:" << std::endl;
+  for (const auto &v : matrix) {
+    for (const auto i : v) {
+      std::cout << i << " ";
+    }
+    std::cout << std::endl;
   }
-
-  std::cout << "Searching for " << target << " in " << m << "x" << n
-            << " matrix" << std::endl;
 
   const auto result = Solution{}.searchMatrix(matrix, target);
   std::cout << "Result: " << result << std::endl;
+  std::cout << std::endl;
 }
 
 int main() {
