@@ -11,18 +11,18 @@ See task [here](https://leetcode.com/explore/challenge/card/october-leetcoding-c
 
 ## Example 1
 
-Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,50]], target = 3
-Output: true
+> Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,50]], target = 3  
+> Output: true
 
 ## Example 2
 
-Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,50]], target = 13
-Output: false
+> Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,50]], target = 13  
+> Output: false
 
 ## Example 3
 
-Input: matrix = [], target = 0
-Output: false
+> Input: matrix = [], target = 0  
+> Output: false
 
 ## Constraints
 
