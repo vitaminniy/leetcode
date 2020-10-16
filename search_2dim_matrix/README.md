@@ -7,6 +7,8 @@ This matrix has the following properties:
 * The first integer of each row is greater than the last integer of the previous
 row.
 
+See task [here](https://leetcode.com/explore/challenge/card/october-leetcoding-challenge/561/week-3-october-15th-october-21st/3497/)
+
 ## Example 1
 
 Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,50]], target = 3
