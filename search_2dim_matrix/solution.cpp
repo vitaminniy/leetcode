@@ -1,32 +1,6 @@
 #include <algorithm>
 #include <vector>
 
-namespace {
-bool recursiveSearch(const std::vector<std::vector<int>> &matrix, int l, int r,
-            int target);
-
-bool recursiveSearch(const std::vector<std::vector<int>> &matrix, int l, int r,
-            int target) {
-  if (l > r)
-    return false;
-
-  const auto mid = l + ((r - l) / 2);
-  const auto &vec = matrix[mid];
-
-  if (vec[0] == target)
-    return true;
-
-  if (vec[0] > target)
-    return recursiveSearch(matrix, l, mid - 1, target);
-
-  if (vec[vec.size() - 1] >= target)
-    return std::binary_search(vec.begin(), vec.end(), target);
-
-  return recursiveSearch(matrix, mid + 1, r, target);
-}
-
-}; // namespace
-
 class Solution {
 public:
   // Indicates that matrix contains number.
@@ -52,6 +26,24 @@ public:
       return false;
     }
 
-    return recursiveSearch(matrix, 0, matrix.size() - 1, target);
+    int left = 0;
+    int right = matrix.size() - 1;
+    while (right >= left) {
+      int mid = left + ((right - left) / 2);
+      if (matrix[mid][0] == target)
+        return true;
+
+      if (matrix[mid][0] < target) {
+        if (matrix[mid][matrix[mid].size() - 1] >= target) {
+          return std::binary_search(matrix[mid].begin(), matrix[mid].end(),
+                                    target);
+        }
+        left = mid + 1;
+      } else {
+        right = mid - 1;
+      }
+    }
+
+    return false;
   }
 };
