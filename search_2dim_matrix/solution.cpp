@@ -2,28 +2,29 @@
 #include <vector>
 
 namespace {
-bool search(const std::vector<std::vector<int>> &matrix, int l, int r,
+bool recursiveSearch(const std::vector<std::vector<int>> &matrix, int l, int r,
             int target);
 
-bool search(const std::vector<std::vector<int>> &matrix, int l, int r,
+bool recursiveSearch(const std::vector<std::vector<int>> &matrix, int l, int r,
             int target) {
   if (l > r)
     return false;
 
-  const auto mid = l + (r - l) / 2;
+  const auto mid = l + ((r - l) / 2);
   const auto &vec = matrix[mid];
 
   if (vec[0] == target)
     return true;
 
   if (vec[0] > target)
-    return search(matrix, l, mid - 1, target);
+    return recursiveSearch(matrix, l, mid - 1, target);
 
   if (vec[vec.size() - 1] >= target)
     return std::binary_search(vec.begin(), vec.end(), target);
 
-  return search(matrix, mid + 1, r, target);
+  return recursiveSearch(matrix, mid + 1, r, target);
 }
+
 }; // namespace
 
 class Solution {
@@ -51,6 +52,6 @@ public:
       return false;
     }
 
-    return search(matrix, 0, matrix.size() - 1, target);
+    return recursiveSearch(matrix, 0, matrix.size() - 1, target);
   }
 };
