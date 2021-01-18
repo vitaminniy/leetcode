@@ -10,4 +10,5 @@ set(CMAKE_CTEST_ARGUMENTS "--output-on-failure")
 add_compile_options(-Wall -Werror -Wextra -Wpedantic)
 enable_testing()
 
+add_subdirectory(rotate_image)
 add_subdirectory(swap_nodes_in_pairs)
