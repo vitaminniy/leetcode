@@ -42,7 +42,6 @@ public:
     if (node == nullptr)
       return node;
 
-
     Node *copy = new Node(node->val);
 
     std::map<int, Node *> visited;
