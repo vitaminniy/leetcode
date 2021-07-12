@@ -14,6 +14,8 @@ endif()
 
 find_package(ClangFormat)
 
+add_subdirectory(lib)
+
 add_subdirectory(isomorphic_strings)
 add_subdirectory(rotate_image)
 add_subdirectory(swap_nodes_in_pairs)

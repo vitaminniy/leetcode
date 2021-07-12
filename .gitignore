@@ -1,4 +1,5 @@
 build/
+.cache/
 
 # Created by https://www.toptal.com/developers/gitignore/api/cmake,osx,linux,c++,c
 # Edit at https://www.toptal.com/developers/gitignore?templates=cmake,osx,linux,c++,c
