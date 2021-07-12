@@ -12,14 +12,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Configure submodules
-      shell: bash
-      run: |
-          git config --global url."https://github.com/".insteadOf "git@github.com:"
-          auth_header="$(git config --local --get http.https://github.com/.extraheader)"
-          git submodule sync --recursive
-          git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
-
     - name: Configure CMake
       shell: bash
       run: make cmake
@@ -27,8 +19,4 @@ jobs:
     - name: Build
       shell: bash
       run: make build
-
-    - name: Test
-      shell: bash
-      run: make test
 
