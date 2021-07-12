@@ -28,3 +28,7 @@ jobs:
       shell: bash
       run: make build
 
+    - name: Test
+      shell: bash
+      run: make test
+
