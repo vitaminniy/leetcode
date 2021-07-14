@@ -1,3 +1,6 @@
 add_subdirectory(isomorphic_strings)
 add_subdirectory(swap_nodes_in_pairs)
 add_subdirectory(rotate_image)
+add_subdirectory(median_of_sorted_arrays)
+
+enable_testing()
