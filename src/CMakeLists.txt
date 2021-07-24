@@ -3,6 +3,7 @@ add_subdirectory(domino_rotations)
 add_subdirectory(isomorphic_strings)
 add_subdirectory(median_of_sorted_arrays)
 add_subdirectory(rotate_image)
+add_subdirectory(search_2dim_matrix)
 add_subdirectory(swap_nodes_in_pairs)
 
 enable_testing()
