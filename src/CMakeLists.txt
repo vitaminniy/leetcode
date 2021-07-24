@@ -1,6 +1,8 @@
+add_subdirectory(clone_graph)
+add_subdirectory(domino_rotations)
 add_subdirectory(isomorphic_strings)
-add_subdirectory(swap_nodes_in_pairs)
-add_subdirectory(rotate_image)
 add_subdirectory(median_of_sorted_arrays)
+add_subdirectory(rotate_image)
+add_subdirectory(swap_nodes_in_pairs)
 
 enable_testing()

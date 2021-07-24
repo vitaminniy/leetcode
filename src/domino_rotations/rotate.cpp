@@ -9,7 +9,7 @@ public:
   int count_swaps(int target, const std::vector<int> &a,
                   const std::vector<int> &b) {
     int nswaps = 0;
-    for (auto i = 0; i < a.size(); i++) {
+    for (size_t i = 0; i < a.size(); i++) {
       if (a[i] != target && b[i] != target) {
         return kMax;
       } else if (a[i] != target) {
