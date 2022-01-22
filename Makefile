@@ -1,27 +1,24 @@
 all: build
 
 BUILD_TYPE ?= Release
-
-build_dir := $(if $(BUILD_DIR),$(BUILD_DIR),build)
-build_type := $(if $(BUILD_TYPE),$(BUILD_TYPE),Release)
+BUILD_DIR ?= build
 
 clean:
-	rm -rf $(build_dir)
+	rm -rf $(BUILD_DIR)
 .PHONY: clean
 
 cmake:
-	cmake -E make_directory $(build_dir)
-	cmake -B $(build_dir) -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=$(build_type)
+	cmake -B $(BUILD_DIR) -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=$(BUILD_TYPE)
 .PHONY: cmake
 
 clang-format: cmake
-	cd $(build_dir) && make clang-format
+	cd $(BUILD_DIR) && make clang-format
 .PHONY: format
 
 build: cmake
-	cd $(build_dir) && cmake --build .
+	cd $(BUILD_DIR) && cmake --build .
 .PHONY: build
 
 test: build
-	cd $(build_dir) && CTEST_OUTPUT_ON_FAILURE=1 make test
+	cd $(BUILD_DIR) && CTEST_OUTPUT_ON_FAILURE=1 make test
 .PHONY: test
