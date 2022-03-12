@@ -1,2 +1,5 @@
+SET(BUILD_GMOCK OFF FORCE)
+SET(INSTALL_GTEST OFF FORCE)
+
 add_subdirectory(googletest EXCLUDE_FROM_ALL)
 
