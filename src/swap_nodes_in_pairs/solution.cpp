@@ -1,15 +1,15 @@
 struct ListNode {
   ListNode() : val(0), next(nullptr) {}
   ListNode(int x) : val(x), next(nullptr) {}
-  ListNode(int x, ListNode *next) : val(x), next(next) {}
+  ListNode(int x, ListNode* next) : val(x), next(next) {}
 
   int val;
-  ListNode *next;
+  ListNode* next;
 };
 
 class Solution {
-public:
-  ListNode *swapPairs(ListNode *head) {
+ public:
+  ListNode* swapPairs(ListNode* head) {
     if (head == nullptr || head->next == nullptr) {
       return head;
     }

@@ -1,9 +1,9 @@
 #include <vector>
 
 class Solution final {
-public:
-  double findMedianSortedArrays(const std::vector<int> &nums1,
-                                const std::vector<int> &nums2) const {
+ public:
+  double findMedianSortedArrays(const std::vector<int>& nums1,
+                                const std::vector<int>& nums2) const {
     if (nums1.empty() && nums2.empty()) {
       return 0;
     }
@@ -45,8 +45,8 @@ public:
     return findMedian(nums);
   }
 
-private:
-  double findMedian(const std::vector<int> &nums) const {
+ private:
+  double findMedian(const std::vector<int>& nums) const {
     const auto size = nums.size();
     if (size % 2 == 1) {
       return nums[size / 2];

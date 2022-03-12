@@ -17,7 +17,7 @@ struct TestCase {
 };
 
 template <typename... Args>
-TestCase MakeTestCase(std::string &&name, Args... args) {
+TestCase MakeTestCase(std::string&& name, Args... args) {
   TestCase tc;
   tc.name = std::move(name);
 
@@ -27,15 +27,15 @@ TestCase MakeTestCase(std::string &&name, Args... args) {
 }
 
 auto SetMedian(double median) {
-  return [median](TestCase &tc) { tc.median = median; };
+  return [median](TestCase& tc) { tc.median = median; };
 }
 
-auto SetFirstNums(std::vector<int> &&nums) {
-  return [nums](TestCase &tc) { tc.nums1 = nums; };
+auto SetFirstNums(std::vector<int>&& nums) {
+  return [nums](TestCase& tc) { tc.nums1 = nums; };
 }
 
-auto SetSecondNums(std::vector<int> &&nums) {
-  return [nums](TestCase &tc) { tc.nums2 = nums; };
+auto SetSecondNums(std::vector<int>&& nums) {
+  return [nums](TestCase& tc) { tc.nums2 = nums; };
 }
 
 std::vector<TestCase> MakeTestCases() {
@@ -60,10 +60,10 @@ std::vector<TestCase> MakeTestCases() {
   };
 }
 
-} // namespace impl
+}  // namespace impl
 
 class TestFindMedian : public ::testing::TestWithParam<impl::TestCase> {
-protected:
+ protected:
   impl::TestCase test_case;
 };
 
@@ -77,6 +77,6 @@ TEST_P(TestFindMedian, Test) {
 
 INSTANTIATE_TEST_SUITE_P(TestFindMedian, TestFindMedian,
                          ::testing::ValuesIn(impl::MakeTestCases()),
-                         [](const auto &info) { return info.param.name; });
+                         [](const auto& info) { return info.param.name; });
 
-} // namespace
+}  // namespace

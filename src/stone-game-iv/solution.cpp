@@ -1,7 +1,7 @@
 #include <vector>
 
 class Solution {
-public:
+ public:
   bool winnerSquareGame(int n) const {
     if (n == 1) {
       return true;

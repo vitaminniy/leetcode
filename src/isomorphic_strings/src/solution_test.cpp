@@ -22,11 +22,11 @@ struct IsIsomorphicTestCase {
   }
 };
 
-} // namespace impl
+}  // namespace impl
 
 class IsIsomorphicTest
     : public ::testing::TestWithParam<impl::IsIsomorphicTestCase> {
-protected:
+ protected:
   impl::IsIsomorphicTestCase is_isomorphic_test_case;
 };
 
@@ -65,6 +65,6 @@ TEST_P(IsIsomorphicTest, IsIsomorphic) {
 INSTANTIATE_TEST_SUITE_P(
     CheckIsIsomorphic, IsIsomorphicTest,
     ::testing::ValuesIn(isomorphic_strings::MakeTestCases()),
-    [](const auto &info) { return info.param.GetName(); });
+    [](const auto& info) { return info.param.GetName(); });
 
-} // namespace isomorphic_strings
+}  // namespace isomorphic_strings

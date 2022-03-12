@@ -2,7 +2,7 @@
 #include <vector>
 
 class Solution {
-public:
+ public:
   // Indicates that matrix contains number.
   //
   // It's known that integers in each row are sorted in ascending order and
@@ -12,7 +12,7 @@ public:
   // Thus we can use bisect algorithm on each first element of each row to
   // find vector that possibly has the number we're trying to guess also with
   // bisect.
-  bool searchMatrix(std::vector<std::vector<int>> &matrix, int target) {
+  bool searchMatrix(std::vector<std::vector<int>>& matrix, int target) {
     const auto size = matrix.size();
     if (size == 0) {
       return false;
@@ -30,8 +30,7 @@ public:
     int right = matrix.size() - 1;
     while (right >= left) {
       int mid = left + ((right - left) / 2);
-      if (matrix[mid][0] == target)
-        return true;
+      if (matrix[mid][0] == target) return true;
 
       if (matrix[mid][0] < target) {
         if (matrix[mid][matrix[mid].size() - 1] >= target) {

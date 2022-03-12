@@ -2,8 +2,8 @@
 #include <vector>
 
 class Solution {
-public:
-  bool isIsomorphic(const std::string &source, const std::string &target) {
+ public:
+  bool isIsomorphic(const std::string& source, const std::string& target) {
     if (source.size() != target.size()) {
       return false;
     }

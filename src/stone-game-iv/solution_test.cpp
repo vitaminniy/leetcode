@@ -28,54 +28,54 @@ TEST_P(TestSolution, Test) {
 std::vector<SolutionTestCase> CreateSolutionTestCases() {
   return {
       {
-          1,              // stones
-          true,           // expected,
-          "single stone", // name
+          1,               // stones
+          true,            // expected,
+          "single stone",  // name
       },
       {
-          2,            // stones
-          false,        // expected,
-          "two stones", // name
+          2,             // stones
+          false,         // expected,
+          "two stones",  // name
       },
       {
-          4,                        // stones
-          true,                     // expected,
-          "initial perfect square", // name
+          4,                         // stones
+          true,                      // expected,
+          "initial perfect square",  // name
       },
       {
-          3,              // stones
-          true,           // expected,
-          "three stones", // name
+          3,               // stones
+          true,            // expected,
+          "three stones",  // name
       },
       {
-          15,                // stones
-          false,             // expected,
-          "fiveteen stones", // name
+          15,                 // stones
+          false,              // expected,
+          "fiveteen stones",  // name
       },
   };
 }
 
-std::string GetTestName(const std::string &name) {
+std::string GetTestName(const std::string& name) {
   auto result = name;
   for (auto it = result.begin(); it != result.end(); ++it) {
     switch (*it) {
-    case ' ':
-    case '-':
-    case ',':
-    case '(':
-    case ')':
-    case '=':
-      *it = '_';
+      case ' ':
+      case '-':
+      case ',':
+      case '(':
+      case ')':
+      case '=':
+        *it = '_';
     }
   }
 
   return result;
 }
 
-} // namespace
+}  // namespace
 
 INSTANTIATE_TEST_SUITE_P(Solution, TestSolution,
                          ::testing::ValuesIn(CreateSolutionTestCases()),
-                         [](const auto &test_case) {
+                         [](const auto& test_case) {
                            return GetTestName(test_case.param.name);
                          });

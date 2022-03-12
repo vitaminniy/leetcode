@@ -3,9 +3,9 @@
 
 #include "solution.cpp"
 
-void solution(std::vector<std::vector<int>> &matrix, int target) {
+void solution(std::vector<std::vector<int>>& matrix, int target) {
   std::cout << "Searching for " << target << " in matrix:" << std::endl;
-  for (const auto &v : matrix) {
+  for (const auto& v : matrix) {
     for (const auto i : v) {
       std::cout << i << " ";
     }

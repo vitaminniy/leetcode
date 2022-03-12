@@ -38,8 +38,8 @@
  *
  */
 class Solution {
-public:
-  void rotate(std::vector<std::vector<int>> &matrix) {
+ public:
+  void rotate(std::vector<std::vector<int>>& matrix) {
     const auto n = matrix.size();
 
     // | 1 2 3 |
@@ -70,10 +70,10 @@ public:
   }
 };
 
-void print(std::ostream &dst, const std::vector<std::vector<int>> &matrix) {
-  for (const auto &row : matrix) {
+void print(std::ostream& dst, const std::vector<std::vector<int>>& matrix) {
+  for (const auto& row : matrix) {
     int i = 0;
-    for (const auto &n : row) {
+    for (const auto& n : row) {
       if (i++ > 0) {
         dst << ' ';
       }
