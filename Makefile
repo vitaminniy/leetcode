@@ -3,6 +3,10 @@ all: build
 BUILD_TYPE ?= Release
 BUILD_DIR ?= build
 
+init:
+	@git submodule update --init --recursive
+.PHONY: init
+
 clean:
 	rm -rf $(BUILD_DIR)
 .PHONY: clean
