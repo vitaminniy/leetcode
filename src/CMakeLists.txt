@@ -10,5 +10,6 @@ add_subdirectory(rotate_image)
 add_subdirectory(search_2dim_matrix)
 add_subdirectory(stone-game-iv)
 add_subdirectory(swap_nodes_in_pairs)
+add_subdirectory(two_sum_ii_input_array_is_sorted)
 
 enable_testing()
