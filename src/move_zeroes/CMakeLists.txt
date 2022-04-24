@@ -14,7 +14,7 @@ target_compile_options(${PROJECT_NAME}
 		-Wreturn-type
 )
 
-include(googletest)
+include(GoogleTest)
 target_link_libraries(${PROJECT_NAME}
 	PRIVATE
 		GTest::gtest
