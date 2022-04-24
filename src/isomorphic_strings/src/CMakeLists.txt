@@ -15,11 +15,7 @@ target_compile_options(${PROJECT_NAME} PRIVATE
   -Wimplicit-fallthrough
 )
 
-find_package(GTest)
-if(NOT GTest_FOUND)
-  message(STATUS "GTest not found;")
-endif()
-
+include(GoogleTest)
 target_link_libraries(${PROJECT_NAME} PRIVATE
   GTest::gtest
   GTest::gtest_main

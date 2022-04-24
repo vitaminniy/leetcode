@@ -1,7 +1,5 @@
 project(stone-game-ix LANGUAGES CXX)
 
-include(GoogleTest)
-
 enable_testing()
 
 add_executable(${PROJECT_NAME})
@@ -16,6 +14,7 @@ target_compile_options(${PROJECT_NAME}
 		-Wextra
 )
 
+include(GoogleTest)
 target_link_libraries(${PROJECT_NAME}
   PRIVATE
     GTest::gtest
