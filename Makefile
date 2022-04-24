@@ -2,6 +2,8 @@ all: build
 
 BUILD_TYPE ?= Release
 BUILD_DIR ?= build
+CC ?= /usr/bin/cc
+CXX ?= /usr/bin/c++
 
 init:
 	@git submodule update --init --recursive
@@ -12,7 +14,10 @@ clean:
 .PHONY: clean
 
 cmake:
-	cmake -B $(BUILD_DIR) -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=$(BUILD_TYPE)
+	cmake -B $(BUILD_DIR) -G "Unix Makefiles" \
+		-DCMAKE_BUILD_TYPE=$(BUILD_TYPE)      \
+		-DCMAKE_C_COMPILER=$(CC)              \
+		-DCMAKE_CXX_COMPILER=$(CXX)
 .PHONY: cmake
 
 clang-format: cmake
