@@ -1,3 +1,4 @@
+add_subdirectory(multiply-strings)
 add_subdirectory(clone_graph)
 add_subdirectory(design-underground-system)
 add_subdirectory(domino_rotations)
