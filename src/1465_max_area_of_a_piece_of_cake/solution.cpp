@@ -1,42 +1,29 @@
 #include <cmath>
-#include <utility>
 #include <vector>
 
 namespace {
 
 const static std::uint64_t kModulo = std::pow(10, 9) + 7;
 
-using Slice = std::pair<int, int>;
-
-int GetDiff(const Slice& slice) { return slice.second - slice.first; }
-
-bool More(const Slice& lhs, const Slice& rhs) {
-  return GetDiff(lhs) > GetDiff(rhs);
-}
-
-Slice GetBiggestSlice(int len, std::vector<int>& cuts) {
+int GetBiggestSlice(int len, std::vector<int>& cuts) {
   if (cuts.empty()) {
-    return std::make_pair(0, len);
+    return static_cast<std::uint64_t>(len);
   }
 
   std::sort(cuts.begin(), cuts.end());
 
-  std::vector<Slice> slices;
-  slices.reserve(cuts.size() + 1);
-
+  int max = 0;
   int start = 0;
   for (const auto cut : cuts) {
-    slices.emplace_back(start, cut);
+    max = std::max(max, cut - start);
     start = cut;
   }
 
   if (start < len) {
-    slices.emplace_back(start, len);
+    max = std::max(max, len - start);
   }
 
-  std::sort(slices.begin(), slices.end(), More);
-
-  return slices.front();
+  return max;
 }
 
 }  // namespace
@@ -45,13 +32,9 @@ class Solution {
  public:
   int maxArea(int h, int w, std::vector<int>& horizontalCuts,
               std::vector<int>& verticalCuts) const {
-    const auto horizontal_slice = GetBiggestSlice(h, horizontalCuts);
-    const auto vertical_slice = GetBiggestSlice(w, verticalCuts);
+    const auto horizontal = GetBiggestSlice(h, horizontalCuts) % kModulo;
+    const auto vertical = GetBiggestSlice(w, verticalCuts) % kModulo;
 
-    std::uint64_t result = 1;
-    result *= static_cast<std::uint64_t>(GetDiff(horizontal_slice)) % kModulo;
-    result *= static_cast<std::uint64_t>(GetDiff(vertical_slice)) % kModulo;
-
-    return static_cast<int>(result % kModulo);
+    return (horizontal * vertical) % kModulo;
   }
 };
