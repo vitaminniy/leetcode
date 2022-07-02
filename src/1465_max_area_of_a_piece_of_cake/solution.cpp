@@ -1,16 +1,12 @@
-#include <cmath>
 #include <vector>
 
 namespace {
 
-const static std::uint64_t kModulo = std::pow(10, 9) + 7;
+constexpr std::size_t kModulo = 1000000007;  // std::pow(10, 9) + 7;
 
-int GetBiggestSlice(int len, std::vector<int>& cuts) {
-  if (cuts.empty()) {
-    return static_cast<std::uint64_t>(len);
-  }
-
+std::size_t GetBiggestSlice(int len, std::vector<int>& cuts) {
   std::sort(cuts.begin(), cuts.end());
+  cuts.push_back(len);
 
   int max = 0;
   int start = 0;
@@ -19,11 +15,7 @@ int GetBiggestSlice(int len, std::vector<int>& cuts) {
     start = cut;
   }
 
-  if (start < len) {
-    max = std::max(max, len - start);
-  }
-
-  return max;
+  return static_cast<std::size_t>(max);
 }
 
 }  // namespace
@@ -35,6 +27,6 @@ class Solution {
     const auto horizontal = GetBiggestSlice(h, horizontalCuts) % kModulo;
     const auto vertical = GetBiggestSlice(w, verticalCuts) % kModulo;
 
-    return (horizontal * vertical) % kModulo;
+    return static_cast<int>((horizontal * vertical) % kModulo);
   }
 };
