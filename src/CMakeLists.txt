@@ -1,3 +1,4 @@
+add_subdirectory(28_implement_strstr)
 add_subdirectory(20_valid_parentheses)
 add_subdirectory(14_longest_common_prefix)
 add_subdirectory(9_palindrome_number)
