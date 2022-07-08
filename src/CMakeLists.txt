@@ -1,3 +1,4 @@
+add_subdirectory(9_palindrome_number)
 add_subdirectory(1465_max_area_of_a_piece_of_cake)
 add_subdirectory(multiply-strings)
 add_subdirectory(clone_graph)
