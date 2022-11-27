@@ -1,3 +1,4 @@
+add_subdirectory(arithmetic-slices-ii-subsequence)
 add_subdirectory(199_bt_right_side_view)
 add_subdirectory(28_implement_strstr)
 add_subdirectory(20_valid_parentheses)
