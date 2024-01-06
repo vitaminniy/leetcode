@@ -14,11 +14,10 @@ target_compile_options(${PROJECT_NAME}
 		-Wextra
 )
 
-include(GoogleTest)
 target_link_libraries(${PROJECT_NAME}
   PRIVATE
     GTest::gtest
     GTest::gtest_main
 )
 
-gtest_discover_tests(${PROJECT_NAME})
+add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})

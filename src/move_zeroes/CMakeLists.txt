@@ -21,3 +21,5 @@ target_link_libraries(${PROJECT_NAME}
 		GTest::gtest_main
 )
 
+enable_testing()
+add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})

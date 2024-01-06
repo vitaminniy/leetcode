@@ -14,10 +14,11 @@ target_compile_options(${PROJECT_NAME}
 		-Wreturn-type
 )
 
-include(GoogleTest)
 target_link_libraries(${PROJECT_NAME}
 	PRIVATE
 		GTest::gtest
 		GTest::gtest_main
 )
 
+enable_testing()
+add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
