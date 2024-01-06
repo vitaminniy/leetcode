@@ -1,3 +1,4 @@
+add_subdirectory(1235-max-profit-job-scheduling)
 add_subdirectory(1465_max_area_of_a_piece_of_cake)
 add_subdirectory(14_longest_common_prefix)
 add_subdirectory(199_bt_right_side_view)
