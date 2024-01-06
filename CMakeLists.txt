@@ -14,8 +14,8 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 find_package(ClangFormat)
+find_package(GTest REQUIRED)
 
-add_subdirectory(lib)
 add_subdirectory(src)
 
 enable_testing()

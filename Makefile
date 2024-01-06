@@ -5,10 +5,6 @@ BUILD_DIR ?= build
 CC ?= /usr/bin/cc
 CXX ?= /usr/bin/c++
 
-init:
-	@git submodule update --init --recursive
-.PHONY: init
-
 clean:
 	rm -rf $(BUILD_DIR)
 .PHONY: clean
