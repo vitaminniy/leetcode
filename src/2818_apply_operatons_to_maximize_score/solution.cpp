@@ -1,3 +1,4 @@
+#include <cstdint>
 #include <queue>
 #include <set>
 #include <stack>
@@ -35,8 +36,8 @@ int primeScore(int n) {
   return static_cast<int>(distinctFactors.size());
 }
 
-int64_t power(int64_t base, int64_t exp) {
-  int64_t result = 1;
+std::int64_t power(std::int64_t base, std::int64_t exp) {
+  std::int64_t result = 1;
 
   while (exp > 0) {
     if (exp % 2 == 1) {
@@ -82,9 +83,9 @@ class Solution {
       decreasing_prime_scores.push(static_cast<int>(idx));
     }
 
-    std::vector<int64_t> num_subarrays(nums.size());
+    std::vector<std::int64_t> num_subarrays(nums.size());
     for (int idx = 0; static_cast<std::size_t>(idx) < nums.size(); idx++) {
-      num_subarrays[idx] = static_cast<int64_t>((next_dominant[idx] - idx)) *
+      num_subarrays[idx] = static_cast<std::int64_t>((next_dominant[idx] - idx)) *
                            (idx - prev_dominants[idx]);
     }
 
@@ -93,13 +94,13 @@ class Solution {
       queue.push(std::make_pair(nums[idx], static_cast<int>(idx)));
     }
 
-    int64_t result = 1;
+    std::int64_t result = 1;
 
     while (k > 0) {
       auto [num, idx] = queue.top();
       queue.pop();
 
-      auto ops = std::min(static_cast<int64_t>(k), num_subarrays[idx]);
+      auto ops = std::min(static_cast<std::int64_t>(k), num_subarrays[idx]);
 
       result = (result * power(num, ops)) % kMOD;
 
