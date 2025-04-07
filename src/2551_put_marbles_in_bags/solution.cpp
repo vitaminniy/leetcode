@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <cassert>
+#include <cstdint>
 #include <vector>
 
 // You have k bags. You are given a 0-indexed integer array weights where
