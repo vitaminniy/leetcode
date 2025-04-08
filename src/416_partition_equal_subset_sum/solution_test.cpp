@@ -12,7 +12,7 @@ TEST(CanPartition, Example1) {
 }
 
 TEST(CanPartition, Example2) {
-  std::vector<int> nums = {1,2,3,5};
+  std::vector<int> nums = {1, 2, 3, 5};
   auto want = false;
 
   auto got = Solution{}.canPartition(nums);

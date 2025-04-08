@@ -85,8 +85,9 @@ class Solution {
 
     std::vector<std::int64_t> num_subarrays(nums.size());
     for (int idx = 0; static_cast<std::size_t>(idx) < nums.size(); idx++) {
-      num_subarrays[idx] = static_cast<std::int64_t>((next_dominant[idx] - idx)) *
-                           (idx - prev_dominants[idx]);
+      num_subarrays[idx] =
+          static_cast<std::int64_t>((next_dominant[idx] - idx)) *
+          (idx - prev_dominants[idx]);
     }
 
     std::priority_queue<std::pair<int, int>> queue;
