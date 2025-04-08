@@ -11,6 +11,7 @@ add_subdirectory(2008-max-earnings-from-taxi)
 add_subdirectory(2551_put_marbles_in_bags)
 add_subdirectory(2818_apply_operatons_to_maximize_score)
 add_subdirectory(3396_min_number_of_ops_to_make_elems_distinct)
+add_subdirectory(3507_minimum_pair_removal_to_sort_array)
 
 add_subdirectory(arithmetic-slices-ii-subsequence)
 add_subdirectory(clone_graph)
