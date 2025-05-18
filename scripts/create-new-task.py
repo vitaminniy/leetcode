@@ -53,7 +53,7 @@ def main():
     if tail == "scripts":
         path = head
 
-    src_dir = os.path.join(path, "src")
+    src_dir = os.path.join(path, "cmd")
     task_dir = os.path.join(src_dir, task)
     src_cmakelists = os.path.join(src_dir, "CMakeLists.txt")
     task_cmakelists = os.path.join(task_dir, "CMakeLists.txt")
