@@ -35,6 +35,6 @@ else()
 	FetchContent_MakeAvailable(googletest)
 endif()
 
-add_subdirectory(src)
+add_subdirectory(cmd)
 
 enable_testing()
