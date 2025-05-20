@@ -1,3 +1,4 @@
+add_subdirectory(5_longest_palindromic_substr)
 add_subdirectory(9_palindrome_number)
 add_subdirectory(14_longest_common_prefix)
 add_subdirectory(20_valid_parentheses)
